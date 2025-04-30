@@ -6,13 +6,13 @@ async function translateText() {
   
     if (!text.trim()) return alert("Escreve algo para traduzir!");
   
-    const endpoint = "https://libretranslate.com/translate";
+    const endpoint = "https://translate.argosopentech.com/translate";
   
     const body = {
       q: text,
       source: from,
       target: to,
-      format: "text",
+      format: "text"
     };
   
     try {
@@ -22,10 +22,16 @@ async function translateText() {
         body: JSON.stringify(body)
       });
   
-      const data = await res.json();
-      let result = data.translatedText;
+      if (!res.ok) {
+        throw new Error("Erro na resposta da API");
+      }
   
-      // Simulação básica de contextualização
+      const data = await res.json();
+  
+      let result = data.translatedText;
+      if (!result) throw new Error("Campo translatedText não encontrado");
+  
+      // Simulação de contextualização (idiomatismos simples)
       if (isContextual) {
         result = contextualize(result, to);
       }
@@ -33,36 +39,34 @@ async function translateText() {
       document.getElementById("output-text").value = result;
     } catch (err) {
       alert("Erro na tradução.");
-      console.error(err);
+      console.error("Erro:", err);
     }
   }
   
   function contextualize(text, lang) {
-    // Simples substituições idiomáticas por exemplo
     if (lang === "en") {
       return text
         .replace(/kick the bucket/g, "die")
         .replace(/break a leg/g, "good luck");
     }
     return text;
-}
-
-function toggleTheme() {
+  }
+  
+  function toggleTheme() {
     const body = document.body;
     const isLight = body.classList.toggle("light-theme");
   
     const btn = document.getElementById("toggle-theme");
     btn.textContent = isLight ? "🌙 Modo Escuro" : "☀️ Modo Claro";
   
-    // Guardar preferência
     localStorage.setItem("theme", isLight ? "light" : "dark");
   }
   
-  // Aplicar tema ao carregar a página
   window.onload = () => {
     const theme = localStorage.getItem("theme");
     if (theme === "light") {
       document.body.classList.add("light-theme");
       document.getElementById("toggle-theme").textContent = "🌙 Modo Escuro";
     }
-};
+  };
+  

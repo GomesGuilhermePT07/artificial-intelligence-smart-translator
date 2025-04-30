@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>GG | AI Translator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>GG | AI Translator</title>
 </head>
 <body>
-    
-    <div class="profile-logo">
-        <img src="./img/PNG/GGomes Logotipo dark mode.png" alt="GGomes Logotipo">
-    </div><!-- profile-logo -->
 
-    <div class="container">
-        <button id="toggle-theme" onclick="toggleTheme()">🌙 Modo Escuro</button>
-        <h1>Tradutor contextual</h1>
+  <div class="profile-logo">
+    <img src="./img/PNG/GGomes Logotipo dark mode.png" alt="GGomes Logotipo">
+  </div>
 
-        <textarea name="input-text" placeholder="Escreve aqui o texto a traduzir..."></textarea>
+  <div class="container">
+    <button id="toggle-theme" onclick="toggleTheme()">🌙 Modo Escuro</button>
+    <h1>Tradutor contextual</h1>
 
-        <div class="controls">
-            <select id="from-lang">
-                <option value="pt">Português</option>
-                <option value="en">Inglês</option>
-                <option value="es">Espanhol</option>
-                <option value="fr">Francês</option>
-            </select>
+    <textarea id="input-text" placeholder="Escreve aqui o texto a traduzir..."></textarea>
 
-            <span>→</span>
+    <div class="controls">
+      <select id="from-lang">
+        <option value="pt">Português</option>
+        <option value="en">Inglês</option>
+        <option value="es">Espanhol</option>
+        <option value="fr">Francês</option>
+      </select>
 
-            <select id="to-lang">
-                <option value="en">Inglês</option>
-                <option value="pt">Português</option>
-                <option value="es">Espanhol</option>
-                <option value="fr">Francês</option>
-            </select>
+      <span>→</span>
 
-            <label>
-                <input type="checkbox" id="context-mode" \>
-                Modo Contextual
-            </label>
-        </div><!-- controls -->
+      <select id="to-lang">
+        <option value="en">Inglês</option>
+        <option value="pt">Português</option>
+        <option value="es">Espanhol</option>
+        <option value="fr">Francês</option>
+      </select>
 
-        <button onclick="translateText()">Traduzir</button>
-
-        <textarea id="output-text" placeholder="Tradução aqui..." readonly></textarea>
-    </div><!-- container -->
-
-    <div class="water-mark">
-        <img src="./img/PNG/GGomes Logotipo dark mode.png" alt="GGomes Logotipo">
-        <h2>Powered by <strong>Guilherme Gomes</strong>.</h2>
+      <label>
+        <input type="checkbox" id="context-mode">
+        Modo Contextual
+      </label>
     </div>
 
-    <script src="script.js"></script>
+    <button onclick="translateText()">Traduzir</button>
+
+    <textarea id="output-text" placeholder="Tradução aqui..." readonly></textarea>
+  </div>
+
+  <div class="water-mark">
+    <img src="./img/PNG/GGomes Logotipo dark mode.png" alt="GGomes Logotipo">
+    <h2>Powered by <strong>Guilherme Gomes</strong>.</h2>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
