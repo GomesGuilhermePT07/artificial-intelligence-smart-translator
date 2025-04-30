@@ -4,13 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>GG | AI Project</title>
+    <title>GG | AI Translator</title>
 </head>
 <body>
     
     <div class="profile-logo">
         <img src="./img/PNG/GGomes Logotipo dark mode.png" alt="GGomes Logotipo">
-    </div>
+    </div><!-- profile-logo -->
+
+    <div class="container">
+        <h1>Tradutor contextual</h1>
+
+        <textarea name="input-text" placeholder="Escreve aqui o texto a traduzir..."></textarea>
+
+        <div class="controls">
+            <select id="from-lang">
+                <option value="pt">Português</option>
+                <option value="en">Inglês</option>
+                <option value="es">Espanhol</option>
+                <option value="fr">Francês</option>
+            </select>
+
+            <span>-></span>
+
+            <select id="to-lang">
+                <option value="en">Inglês</option>
+                <option value="pt">Português</option>
+                <option value="es">Espanhol</option>
+                <option value="fr">Francês</option>
+            </select>
+
+            <label>
+                <input type="checkbox" id="context-mode" \>
+                Modo Contextual
+            </label>
+        </div><!-- controls -->
+
+        <button onclick="translateText()">Traduzir</button>
+
+        <textarea id="output-text" placeholder="Tradução aqui..." readonly></textarea>
+    </div><!-- container -->
 
     <script src="script.js"></script>
 </body>
