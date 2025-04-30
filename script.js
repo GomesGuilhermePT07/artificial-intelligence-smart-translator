@@ -45,5 +45,24 @@ async function translateText() {
         .replace(/break a leg/g, "good luck");
     }
     return text;
+}
+
+function toggleTheme() {
+    const body = document.body;
+    const isLight = body.classList.toggle("light-theme");
+  
+    const btn = document.getElementById("toggle-theme");
+    btn.textContent = isLight ? "🌙 Modo Escuro" : "☀️ Modo Claro";
+  
+    // Guardar preferência
+    localStorage.setItem("theme", isLight ? "light" : "dark");
   }
   
+  // Aplicar tema ao carregar a página
+  window.onload = () => {
+    const theme = localStorage.getItem("theme");
+    if (theme === "light") {
+      document.body.classList.add("light-theme");
+      document.getElementById("toggle-theme").textContent = "🌙 Modo Escuro";
+    }
+};
