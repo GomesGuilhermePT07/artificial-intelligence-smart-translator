@@ -1,3 +1,91 @@
-body{
-    background-color: black;
-}
+:root {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --input-bg: #1e1e1e;
+    --primary: #8e44ad; /* Roxo */
+    --primary-hover: #732d91;
+    --border-color: #333;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  }
+  
+  h1 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    margin-bottom: 15px;
+    resize: vertical;
+    border-radius: 6px;
+    background: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+  }
+  
+  textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px var(--primary-hover);
+  }
+  
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  select, label {
+    background: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+  
+  input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 5px;
+  }
+  
+  button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: var(--primary-hover);
+  }
+  
